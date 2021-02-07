@@ -12,7 +12,8 @@ setup(
         "click",
         "bs4",
         "pandas",
-        "urllib3"
+        "urllib3",
+        "flask"
     ],
     author="Melchior P.",
     entry_points='''
