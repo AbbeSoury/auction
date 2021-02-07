@@ -1,12 +1,11 @@
 import pandas as pd
 import flask
-import urllib.parse
 from flask import request, jsonify
 
 from auction.session.operators import Drouot, Interencheres
 
 app = flask.Flask(__name__)
-app.config['DEBUG'] = True
+app.config['DEBUG'] = False
 
 
 @app.route('/', methods=['GET'])
@@ -40,7 +39,6 @@ def api_drout_inter():
 def api_drout():
 
     if 'item' in request.args:
-        print(request.args['item'], urllib.parse.unquote(request.args['item']))
         item = request.args['item']
     else:
         return """Error: No item field provided.
@@ -57,7 +55,6 @@ def api_drout():
 def api_inter():
 
     if 'item' in request.args:
-        print(request.args['item'], urllib.parse.unquote(request.args['item']))
         item = request.args['item']
     else:
         return """Error: No item field provided.
